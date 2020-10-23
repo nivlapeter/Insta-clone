@@ -20,14 +20,7 @@ from django.conf.urls.static import static
 from django.contrib.auth import views 
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
-    # path('', include('gram.urls')),
-    # path('accounts/', include('registration.backends.simple.urls')),
-    # path('logout/', views.LogoutView.as_view(),{"next_page":'/'}),
-    # path('tinymce/', include('tinymce.urls')),
-
-
-
+    
     url('admin/', admin.site.urls),
     url('', include('gram.urls')),
     url('accounts/', include('registration.backends.simple.urls')),
