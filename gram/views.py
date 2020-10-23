@@ -18,7 +18,7 @@ from .token import account_activation_token
 def index(request):
     images = Image.acquire_all_images()
 
-    return render(request, 'home.html', {'images': images})
+    return render(request, 'igram/home.html', {'images': images})
 
 
 def registration(request):
@@ -31,13 +31,14 @@ def registration(request):
                 user = form.save(commit=False)
                 user.is_active = False
                 user.save()
+                return redirect('index')
                 current_site = get_current_site(request)
                 email = form.cleaned_data.get('email')
                 activation_email(user, current_site, email)
                 return HttpResponse('Complete registration by confirming your email address')
         else:
             form = SignupForm()
-        return render(request, 'registration/registration_form.html', {'form': form})
+        return render(request, 'registration/registration.html', {'form': form})
 
 
 def confirm(request, uidb64, token):
