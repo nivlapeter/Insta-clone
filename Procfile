@@ -1,1 +1,1 @@
-web:gunicorn the_gram.wsgi
+web: gunicorn the_gram.wsgi
