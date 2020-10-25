@@ -39,7 +39,7 @@ def registration(request):
                 return HttpResponse('Complete registration by confirming your email address')
         else:
             form = SignupForm()
-        return render(request, 'registration/registration.html', {'form': form})
+        return render(request, 'registration/registration_form.html', {'form': form})
 
 
 def confirm(request, uidb64, token):
